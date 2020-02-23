@@ -1,0 +1,28 @@
+pip install --upgrade pip
+pip install git+https://github.com/kaushaltrivedi/fast-bert.git
+cd utils/apex
+pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+
+
+root@floydhub:/floyd/home# nvidia-smi 
+Sun Feb 23 19:42:10 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 410.104      Driver Version: 410.104      CUDA Version: 10.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla K80           On   | 00000000:00:1E.0 Off |                    0 |
+| N/A   73C    P0   129W / 149W |   7761MiB / 11441MiB |     89%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
+root@floydhub:/floyd/home# nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on Sat_Aug_25_21:08:01_CDT_2018
+Cuda compilation tools, release 10.0, V10.0.130
